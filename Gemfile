@@ -51,17 +51,15 @@ group :test do
   gem 'webdrivers'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '5.0.0'
 gem 'devise', '~> 4.8', '>= 4.8.0'
 gem 'devise_masquerade', '~> 1.3'
+gem 'faraday'
 gem 'font-awesome-sass', '~> 5.15'
 gem 'friendly_id', '~> 5.4'
 gem 'hotwire-rails'
 gem 'image_processing'
 gem 'madmin'
-gem 'name_of_person', '~> 1.1'
 gem 'noticed', '~> 1.2'
 gem 'omniauth-facebook', '~> 8.0'
 gem 'omniauth-github', '~> 2.0'

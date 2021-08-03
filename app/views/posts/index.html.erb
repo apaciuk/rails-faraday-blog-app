@@ -1,0 +1,49 @@
+
+
+
+<div class="row mt-5 mb-5">
+  <div class="col-sm-6">
+    <h1>Posts | <%= link_to "New Category", new_category_path, class: "btn btn-warning btn-sm" %></h1>
+  </div>
+
+  <div class="col-sm-6 text-end">
+  <%= link_to new_post_path, class: 'btn btn-primary' do %>
+    Add New Post
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Title</th>
+            <th>Content</th>
+            <th>Img url</th>
+            <th>User</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @posts.each do |post| %>
+        <%= content_tag :tr, id: dom_id(post), class: dom_class(post) do %>
+          
+
+                      <td><%= post.title %></td>
+                      <td><%= post.content %></td>
+                      <td><%= post.img_url %></td>
+                      <td><%= post.user %></td>
+          
+          
+            <td><%= link_to 'Show', post %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
