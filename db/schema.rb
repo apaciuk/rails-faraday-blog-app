@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_121148) do
     t.string "content"
     t.string "img_url"
     t.integer "user_id", null: false
+    t.string "category"
     t.integer "categories_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

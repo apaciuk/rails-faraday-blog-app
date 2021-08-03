@@ -4,6 +4,27 @@
 <div class="row mt-5 mb-5">
   <div class="col-sm-6">
     <h1>Posts | <%= link_to "New Category", new_category_path, class: "btn btn-warning btn-sm" %></h1>
+    <br />
+    <hr />
+    <br />
+    <h4>All Categories</h4>
+  <% Category.all.each do |cat| %>
+    <%= link_to cat.name, posts_path(category: cat.name) %>
+      <br />
+    <% end %>
+    <br />
+    <hr />
+    <br />
+    <h4>Category In Navbar</h4>
+  <% Category.where(display_in_navbar: true).each do |cat| %>
+  <% link_to cat.name, posts_path(category: cat.name) %>
+      <br />
+    <% end %>
+    <br />
+    <hr />
+    <br />
+
+
   </div>
 
   <div class="col-sm-6 text-end">
@@ -22,7 +43,7 @@
             <th>Title</th>
             <th>Content</th>
             <th>Img url</th>
-            <th>User</th>
+            <th>Category</th>
             
           <th></th>
         
@@ -37,7 +58,7 @@
                       <td><%= post.title %></td>
                       <td><%= post.content %></td>
                       <td><%= post.img_url %></td>
-                      <td><%= post.user %></td>
+                      <td><%= post.category.name %></td>
           
           
             <td><%= link_to 'Show', post %></td>
