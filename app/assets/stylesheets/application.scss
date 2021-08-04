@@ -5,6 +5,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap";
+@import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
 
 // Fixes bootstrap nav-brand container overlap
@@ -18,7 +19,4 @@
 // Masquerade alert shouldn't have a bottom margin
 body > .alert {
   margin-bottom: 0;
-}
-.navbar-dark {
-  background-color: #3d3a56!important;
 }

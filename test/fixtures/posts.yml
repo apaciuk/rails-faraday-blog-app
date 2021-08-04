@@ -2,12 +2,14 @@
 
 one:
   title: MyString
-  content: MyString
-  img_url: MyString
+  description: MyText
+  published: false
+  published_at: 2021-08-04 20:12:32
   user: one
 
 two:
   title: MyString
-  content: MyString
-  img_url: MyString
+  description: MyText
+  published: false
+  published_at: 2021-08-04 20:12:32
   user: two

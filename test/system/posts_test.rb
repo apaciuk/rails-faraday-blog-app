@@ -14,8 +14,9 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "New Post"
 
-    fill_in "Content", with: @post.content
-    fill_in "Img url", with: @post.img_url
+    fill_in "Description", with: @post.description
+    check "Published" if @post.published
+    fill_in "Published at", with: @post.published_at
     fill_in "Title", with: @post.title
     fill_in "User", with: @post.user_id
     click_on "Create Post"
@@ -28,8 +29,9 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "Edit", match: :first
 
-    fill_in "Content", with: @post.content
-    fill_in "Img url", with: @post.img_url
+    fill_in "Description", with: @post.description
+    check "Published" if @post.published
+    fill_in "Published at", with: @post.published_at
     fill_in "Title", with: @post.title
     fill_in "User", with: @post.user_id
     click_on "Update Post"

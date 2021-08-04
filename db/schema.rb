@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_121148) do
+ActiveRecord::Schema.define(version: 2021_08_04_191232) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,16 +49,6 @@ ActiveRecord::Schema.define(version: 2021_08_03_121148) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.integer "posts_id"
-    t.boolean "display_in_navbar", default: true
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["posts_id"], name: "index_categories_on_posts_id"
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -84,14 +74,12 @@ ActiveRecord::Schema.define(version: 2021_08_03_121148) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.string "content"
-    t.string "img_url"
+    t.text "description"
+    t.boolean "published"
+    t.datetime "published_at"
     t.integer "user_id", null: false
-    t.string "category"
-    t.integer "categories_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["categories_id"], name: "index_posts_on_categories_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
