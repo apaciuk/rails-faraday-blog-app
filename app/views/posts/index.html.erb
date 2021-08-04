@@ -1,6 +1,5 @@
 
 
-
 <div class="row mt-5 mb-5">
   <div class="col-sm-6">
     <h1>Posts | <%= link_to "New Category", new_category_path, class: "btn btn-warning btn-sm" %></h1>
@@ -15,16 +14,6 @@
     <br />
     <hr />
     <br />
-    <h4>Category In Navbar</h4>
-  <% Category.where(display_in_navbar: true).each do |cat| %>
-  <% link_to cat.name, posts_path(category: cat.name) %>
-      <br />
-    <% end %>
-    <br />
-    <hr />
-    <br />
-
-
   </div>
 
   <div class="col-sm-6 text-end">
@@ -34,37 +23,33 @@
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
+
+
+
+
     
 
             <th>Title</th>
             <th>Content</th>
             <th>Img url</th>
             <th>Category</th>
-            
-          <th></th>
-        
-      </tr>
-    </thead>
 
-    <tbody>
+
+
+
+
       <% @posts.each do |post| %>
-        <%= content_tag :tr, id: dom_id(post), class: dom_class(post) do %>
-          
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3><%= link_to post.title, post_path(post.id) %></h3>
 
-                      <td><%= post.title %></td>
-                      <td><%= post.content %></td>
-                      <td><%= post.img_url %></td>
-                      <td><%= post.category.name %></td>
+            <%= post.content %>
+            <%= post.img_url %>
+            <%= post.category %>
+          </div>
           
           
-            <td><%= link_to 'Show', post %></td>
+           <%= link_to 'Show', post %>
           
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
-</div>

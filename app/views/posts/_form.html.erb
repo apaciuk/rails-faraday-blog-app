@@ -26,10 +26,8 @@
       <%= form.file_field :img_url, class: 'form-control' %>
     </div>
 
-  <div class="mb-3">
-    <%= form.label :category, class: 'form-label' %>
-      <%= form.text_field :category, class: 'form-control' %>
-    </div>
+  <%= form.label :category, class: 'form-label' %>
+  <%= form.select :categories_id, Category.all.map {|c| [c.id]},  class: 'form-control' %>
 
   <div class="mb-3">
     <% if post.persisted? %>
@@ -38,7 +36,7 @@
       </div>
     <% end %>
 
-    <%= form.submit class: 'btn btn-primary' %>
+    <%= form.submit class: 'btn btn-primary mt-3' %>
 
     <% if post.persisted? %>
       <%= link_to "Cancel", post, class: "btn btn-link" %>

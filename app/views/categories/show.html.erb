@@ -5,12 +5,10 @@
   <%= link_to edit_category_path(@category), class: 'btn btn-primary' do %>
     Edit
   <% end %>
-  <h1>Show category</h1>
+  <h1>Category: <%= @category.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Name:</dt>
-  <dd><%= @category.name %></dd>
-  <dt>Description:</dt>
+  <dt><h4>Description:</h4></dt>
   <dd><%= @category.description %></dd>
 </dl>
